@@ -24,6 +24,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	ln -s /usr/local/node*/bin/npm /usr/bin/npm && \
 # Install npm dependencies
 	npm install -g --allow-root yo bower grunt-cli gulp generator-angular && \
+# yo falls back to a non-root user while running
+	mkdir -p /root/.config/configstore && \
+	chmod 777 /root /root/.config /root/.config/configstore && \
 # Clean various caches
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* && \
