@@ -4,11 +4,13 @@ MAINTAINER Pierre Barnoux <pbarnoux@gmail.com>
 # Maven and Node versions
 ENV MVN_VER="3.3.3" NODE_VER="v0.12.7"
 
-# Install dependencies required to make npm modules
+# Install required dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	bzip2 \
 	g++ \
 	git \
+	# Run grunt test (karma + phantomjs)
+	libfontconfig \
 	make \
 	nasm \
 	python && \
