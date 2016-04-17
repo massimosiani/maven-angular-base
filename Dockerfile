@@ -26,6 +26,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	ln -s /usr/local/node*/bin/npm /usr/bin/npm && \
 # Install npm dependencies
 	npm install -g --allow-root yo bower grunt-cli gulp generator-angular && \
+	ln -s /usr/local/node*/bin/bower /usr/bin/bower && \
+	ln -s /usr/local/node*/bin/grunt /usr/bin/grunt && \
+	ln -s /usr/local/node*/bin/gulp /usr/bin/gulp && \
 # yo falls back to a non-root user while running
 	mkdir -p /root/.config/configstore && \
 	chmod 777 /root /root/.config /root/.config/configstore && \
@@ -35,4 +38,3 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	rm -rf /tmp/* /var/tmp/*
 
 CMD ["/bin/bash"]
-
