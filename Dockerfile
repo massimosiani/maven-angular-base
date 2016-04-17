@@ -2,7 +2,7 @@ FROM pbarnoux/oraclejdk-minimal
 MAINTAINER Pierre Barnoux <pbarnoux@gmail.com>
 
 # Maven and Node versions
-ENV MVN_VER="3.3.3" NODE_VER="v0.12.7"
+ENV MVN_VER="3.3.9" NODE_VER="v5.10.1"
 
 # Install required dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
