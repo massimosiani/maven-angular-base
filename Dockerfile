@@ -1,5 +1,6 @@
 FROM pbarnoux/oraclejdk-minimal
-MAINTAINER Pierre Barnoux <pbarnoux@gmail.com>
+MAINTAINER Massimo Siani <maxsiani@gmail.com>
+# based on pbarnoux/maven-angular-base
 
 # Maven and Node versions
 ENV MVN_VER="3.3.9" NODE_VER="v5.10.1"
@@ -29,6 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	ln -s /usr/local/node*/bin/bower /usr/bin/bower && \
 	ln -s /usr/local/node*/bin/grunt /usr/bin/grunt && \
 	ln -s /usr/local/node*/bin/gulp /usr/bin/gulp && \
+	alias bower="bower --allow-root" && \
+	alias grunt="grunt --allow-root" && \
 # yo falls back to a non-root user while running
 	mkdir -p /root/.config/configstore && \
 	chmod 777 /root /root/.config /root/.config/configstore && \
