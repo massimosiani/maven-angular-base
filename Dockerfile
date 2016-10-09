@@ -3,7 +3,7 @@ MAINTAINER Massimo Siani <maxsiani@gmail.com>
 # based on pbarnoux/maven-angular-base
 
 # Maven and Node versions
-ENV MVN_VER="3.3.9" NODE_VER="v5.10.1"
+ENV MVN_VER="3.3.9" NODE_VER="v6.7.0"
 
 # Install required dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
